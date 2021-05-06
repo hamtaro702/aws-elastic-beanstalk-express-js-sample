@@ -1,20 +1,17 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:lts-buster-slim' 
-            args '-p 8080:8080' 
-        }
-    }
+    agent any
+    
     stages {
-        stage('Build') { 
+        
+        stage('Build') {
+            agent {
+                docker {
+                    image 'node:lts-buster-slim' 
+                    args '-p 8080:8080' 
+                 }
+             } 
             steps {
-                sh 'npm install'
-                sh 'npm build' 
-            }
-        }
-        stage('TEST') { 
-            steps {
-                sh 'npm test' 
+                sh 'npm install' 
             }
         }
     }
