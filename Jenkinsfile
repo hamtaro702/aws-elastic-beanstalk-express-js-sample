@@ -5,7 +5,7 @@ pipeline {
     }
     stages {
         
-        stage('Build') {
+        stage('initial') {
             agent {
                 docker {
                     image 'node:lts-buster-slim' 
@@ -14,6 +14,12 @@ pipeline {
              } 
             steps {
                 sh 'npm install' 
+            }
+        }
+        stage('Build and Test'){
+            steps{
+                sh 'npm build'
+                sh 'npm test'
             }
         }
     }
