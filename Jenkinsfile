@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'node:16-alpine3.11' 
+                    image 'node:lts-buster-slim' 
                     args '-p 8081:8081' 
                  }
              } 
