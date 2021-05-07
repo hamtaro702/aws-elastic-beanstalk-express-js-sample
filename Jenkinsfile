@@ -1,13 +1,13 @@
 pipeline {
-    agent docker {
-                    image 'node:lts-buster-slim' 
-                    args '-p 8081:8081' 
-    }
+    agent any
     environment {
         HOME = '.'
     }
     stages {
-        
+        agent docker {
+                    image 'node:lts-buster-slim' 
+                    args '-p 8081:8081' 
+        }
         stage('initial') {
             
             steps {
