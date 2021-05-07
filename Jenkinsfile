@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image '16-alpine3.11' 
+                    image 'node:16-alpine3.11' 
                     args '-p 8080:8080' 
                  }
              } 
