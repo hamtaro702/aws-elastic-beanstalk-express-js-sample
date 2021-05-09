@@ -25,7 +25,16 @@ jobs:
         version_label: ${{ github.sha }}
         region: us-east-2
         deployment_package: deploy.zip
-    - name: Slack Notification
+    - name: Slack Notification Success
+      if: success() 
       uses: rtCamp/action-slack-notify@v2
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_COLOR: ${{ job.status }}
+
+    - name: Slack Notification Fail
+      if: failure()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_COLOR: ${{ job.status }}    
