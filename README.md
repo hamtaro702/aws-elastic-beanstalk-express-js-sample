@@ -1,5 +1,5 @@
 # AWS Elastic Beanstalk Node.js Sample App
-
+[![Deploy Elastic beanstalk](https://github.com/hamtaro702/aws-elastic-beanstalk-express-js-sample/actions/workflows/main2.yml/badge.svg)](https://github.com/hamtaro702/aws-elastic-beanstalk-express-js-sample/actions/workflows/main2.yml)
 This repository contains a sample Node.js web application built using [Express](https://expressjs.com/), meant to be used as part of the AWS DevOps Learning Path.
 
 ## Security
